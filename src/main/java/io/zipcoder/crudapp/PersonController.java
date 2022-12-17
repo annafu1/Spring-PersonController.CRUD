@@ -16,7 +16,7 @@ public class PersonController {
         this.service= service;
     }
 
-    @RequestMapping(value = "/people", method = RequestMethod.POST)
+    @RequestMapping(value = "/people/post", method = RequestMethod.POST)
     public ResponseEntity<Person> createPerson(@RequestBody Person p) {
         return new ResponseEntity<>(service.create(p), HttpStatus.CREATED);
     }
@@ -26,7 +26,7 @@ public class PersonController {
         return new ResponseEntity<>(service.getPerson(id), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/people", method = RequestMethod.GET)
+    @RequestMapping(value = "/people/all", method = RequestMethod.GET)
     public ResponseEntity<Iterable<Person>> getPersonList() {
         return new ResponseEntity<>(service.getPersonList(), HttpStatus.OK);
     }
